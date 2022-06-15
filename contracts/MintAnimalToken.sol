@@ -10,6 +10,10 @@ contract MintAnimalToken is ERC721Enumerable {
     function mintAnimalToken() public {
         uint256 animalTokenId = totalSupply() + 1; // tokenid를 매번 1씩 올림
 
-        _mint(msg.sender, animalTokenId); // erc721에서 제공해주는 민팅하는 함수임
+        uint256 animalType = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, animalTokenId))) % 5 + 1;
+
+        animalTypes[animalTokenId] = animalType;
+
+        _mint(msg.sender, animalTokenId); // erc721에서 제공해주는 민팅하는 함수임 
     }
 } 
