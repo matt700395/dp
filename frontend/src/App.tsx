@@ -2,7 +2,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./routes/main";
-import { mintAnimalTokenContract } from "./web3Config";
+
 
 
 const App: FC = () => {
@@ -30,7 +30,7 @@ const App: FC = () => {
   useEffect(()=>{
     getAccount();
   }, []);
-  
+
   return (
     <BrowserRouter>
       <Routes>
