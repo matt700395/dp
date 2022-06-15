@@ -421,7 +421,7 @@ const mintAnimalTokenAbi: AbiItem[] = [
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-]
+];
 
 const saleAnimalTokenAbi: AbiItem[] = [
 	{
@@ -530,5 +530,24 @@ const saleAnimalTokenAbi: AbiItem[] = [
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-]
+];
+
+//배포된 컨트랙트의 주소를 가져옴
+const mintAnimalTokenAddress = "0x330650895A6D10253B86C3D17a1e40952bA4039C";
+const saleAnimalTokenAddress = "0xf76D350a9702ea921bc3C7f448bEfd1C551061Ed";
+
+//export는 ts에서 개체를 모듈화할때 사용함
+export const web3 = new Web3(window.ethereum);
+
+export const mintAnimalTokenContract = new web3.eth.Contract(
+    mintAnimalTokenAbi,
+    mintAnimalTokenAddress
+);
+
+export const saleAnimalTokenContract = new web3.eth.Contract(
+    saleAnimalTokenAbi,
+    saleAnimalTokenAddress
+);
+
+
 
