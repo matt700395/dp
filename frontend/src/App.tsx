@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "/home/matt7003/codestates/dp/frontend/src/routes/main";
 
-import { mintAnimalTokenContract } from "../contracts/index";
+import { mintAnimalTokenContract } from "/home/matt7003/codestates/dp/frontend/src/contracts/index";
 
 const App: FC = () => {
 //메타 마스크 연결하기
